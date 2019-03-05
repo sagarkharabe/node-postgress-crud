@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  client.query("SELECT * FROM  recipes", (err, result) => {
+  client.query("SELECT * FROM  recipes ORDER BY id ASC", (err, result) => {
     if (err) {
       console.log(err.stack);
     } else {
